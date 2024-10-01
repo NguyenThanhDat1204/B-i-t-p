@@ -3,10 +3,27 @@ def gradient_descent(starting_point, learning_rate, num_iterations):
   for i in range(num_iterations):
     gradient = 2*x + 6
     x = x - learning_rate * gradient
-    print(f"Iteration {i+1}: x = {x:.4f}, f(x) = {x**2 + 6*x + 8:.4f}")
+    print(x)
 
-
-starting_point = 2
+# Ví dụ lần lặp 1
+starting_point = 0
 learning_rate = 0.1
 num_iterations = 10
-gradient_descent(starting_point, learning_rate, num_iterations)
+print(gradient_descent(starting_point, learning_rate, num_iterations))
+
+# Ví dụ lần lặp 2
+starting_point = 0
+learning_rate = 0.2
+num_iterations = 10
+
+print(gradient_descent(starting_point, learning_rate, num_iterations))
+
+# Ví dụ lần lặp 3
+starting_point = 0
+learning_rate = 1
+num_iterations = 10
+
+print(gradient_descent(starting_point, learning_rate, num_iterations))
+
+#Giá trị learning_rate quá nhỏ sẽ khiến thuật toán hội tụ chậm.
+#Giá trị learning_rate quá lớn có thể khiến thuật toán "bật" qua cực tiểu hoặc
