@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+def gradient_descent(starting_point, learning_rate, num_iterations):
+  x = starting_point
+  values = []
+  for i in range(num_iterations):
+    gradient = 2*x + 6
+    x = x - learning_rate * gradient
+    values.append(x**2 + 6*x + 8)
+  return values
+
+
+learning_rates = [0.001, 0.01, 0.1, 1.0]
+starting_point = 0
+num_iterations = 100
+
+for learning_rate in learning_rates:
+  values = gradient_descent(starting_point, learning_rate, num_iterations)
+  plt.plot(range(num_iterations), values, label=f"learning_rate={learning_rate}")
+
+plt.xlabel("Số bước lặp")
+plt.ylabel("Giá trị hàm f(x)")
+plt.title("Ảnh hưởng của tốc độ học đến quá trình hội tụ")
+plt.legend()
+plt.show()
